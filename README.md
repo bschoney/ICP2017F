@@ -1,4 +1,4 @@
-rrett Schonefeld**
+Barrett Schonefeld**
 **UT EID:** bjs3865
 **Email:** bschoney@utexas.edu
 **Department:** http://www.ae.utexas.edu/
