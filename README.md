@@ -16,4 +16,4 @@ This repository contains my homework, quizzes, exams, and any other material for
 For questions or troubleshooting, please contact: <br /> <br />
 Barrett Schonefeld <br />
 bschoney@utexas.edu <br /> <br />
-> "Those who runs the extra mile have gone farther." -Barrett Schonefeld
+> "Those who run the extra mile have gone farther." -Barrett Schonefeld
