@@ -15,4 +15,5 @@ This repository contains my homework, quizzes, exams, and any other material for
 * **[Exams](https://github.com/bschoney/ICP2017F/tree/master/Exams):** This directory contains all my exam submissions, each of which is a folder properly named with the exam name or number containing the exam submission. <br /> <br />
 For questions or troubleshooting, please contact: <br /> <br />
 Barrett Schonefeld <br />
-bschoney@utexas.edu <br />
+bschoney@utexas.edu <br /> <br />
+> "Those who runs the extra mile have gone farther." -Barrett Schonefeld
