@@ -7,7 +7,7 @@
 **Level:** Sophomore <br />
 **ICP Class Position:** Student <br />
 **Course Webpage:** http://www.shahmoradi.org/ICP2017F/ <br /> <br />
-![alt text](https://github.com/bschoney/ICP2017F/blob/master/IMG_0435.jpg) <br />
+![alt text](https://github.com/bschoney/ICP2017F/blob/gh-pages/IMG_0435.jpg) <br />
 ## Course Content <br />
 This repository contains my homework, quizzes, exams, and any other material for [ICP2017F](http://www.shahmoradi.org/ICP2017F/). <br /> <br />
 * **[Homework](https://github.com/bschoney/ICP2017F/tree/master/Homework):** This directory contains all my homework submissions, each of which is a folder properly named with the homework number containing the homework submission. <br /> <br />
