@@ -1,1 +1,7 @@
-
+(A)
+The following add all new and modified-existing files to staging area:
+A git add -A, D git add --all
+(B)
+C git commit -am
+(C)
+git --help
