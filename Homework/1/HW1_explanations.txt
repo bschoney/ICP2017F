@@ -25,7 +25,7 @@ Barretts-Air:2 bschoney$ git commit -am  "commiting test.txt for test1"
  1 file changed, 1 insertion(+)
  create mode 100644 Homework/2/test.txt
 ```
-E) I do not see test.txt anymore because I am now in a different branch that has not been merged <br />  
+E) I do not see test.txt anymore because I am now in a different branch that has not been merged 
 with the information in branch test1.
 ```bash
 Barretts-Air:2 bschoney$ git checkout test2
@@ -74,8 +74,8 @@ Barretts-Air:Homework bschoney$ cd 2
 Barretts-Air:2 bschoney$ ls
 test.txt
 ```
-J) The branches cannot be merged because they have conflicting files in them. The test.txt <br />  
-file in master is different from the test.txt file in test2 and both are in homework/2/; <br />  
+J) The branches cannot be merged because they have conflicting files in them. The test.txt 
+file in master is different from the test.txt file in test2 and both are in homework/2/; 
 therefore, you have to make the files the same before merging.
 ```bash
 Barretts-Air:ICP2017F bschoney$ git merge test2
@@ -89,7 +89,7 @@ Barretts-Air:ICP2017F bschoney$ git checkout test2
 Homework/2/test.txt: needs merge
 error: you need to resolve your current index first
 ```
-L) This conflict exists because branch test2 has a different test.txt file from the <br />  
+L) This conflict exists because branch test2 has a different test.txt file from the 
 test.txt file in the master branch. 
 ```bash
 Barretts-Air:ICP2017F bschoney$ git status
@@ -155,10 +155,10 @@ Barretts-Air:2 bschoney$ git branch
 * master
   test2
 ```
-Q) The difference exists because the master branch and the test1 branch have been merged <br />  
-while the test1 branch and the test2 branch are operating independently and are unmerged. <br />  
-Since the test2 branch is separate from the test1 branch, git discourages deleting test1 from test2. <br />  
-However, the master branch and test1 are already merged, so git allows a simple <br />  
+Q) The difference exists because the master branch and the test1 branch have been merged 
+while the test1 branch and the test2 branch are operating independently and are unmerged. 
+Since the test2 branch is separate from the test1 branch, git discourages deleting test1 from test2. 
+However, the master branch and test1 are already merged, so git allows a simple 
 deletion of branch test1 from the master branch.
 R)
 ```bash
