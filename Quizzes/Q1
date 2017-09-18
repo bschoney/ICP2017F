@@ -1,6 +1,6 @@
 (A)
 The following add all new and modified-existing files to staging area:
-A git add -A, D git add --all
+A git add -A, D git add --all, F git add . , E1 git add -u
 (B)
 C git commit -am
 (C)
