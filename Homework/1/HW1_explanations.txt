@@ -1,3 +1,191 @@
-E) The test.txt file does not show in the homework/2/ file because I am in a different branch. 
-The information has not been merged; therefore, the test.txt file currently only exists in the test1 branch.
-G)
+A)
+```bash
+Barretts-Air:Homework bschoney$ git branch test1
+Barretts-Air:Homework bschoney$ git branch test2
+```
+B)
+```bash
+Switched to branch 'test1'
+Barretts-Air:Homework bschoney$ pwd
+/Users/bschoney/ICP2017F/Homework
+Barretts-Air:Homework bschoney$ mkdir 2
+Barretts-Air:Homework bschoney$ cd 2
+Barretts-Air:2 bschoney$ vim test.txt
+```
+C)
+```bash
+This is some example text for branch test1.
+:wq
+```
+D)
+```bash
+Barretts-Air:2 bschoney$ git add --all
+Barretts-Air:2 bschoney$ git commit -am  "commiting test.txt for test1"
+[test1 f5be42f] commiting test.txt for test1
+ 1 file changed, 1 insertion(+)
+ create mode 100644 Homework/2/test.txt
+```
+E) I do not see test.txt anymore because I am now in a different branch that has not been merged with the information in branch test1.
+```bash
+Barretts-Air:2 bschoney$ git checkout test2
+Switched to branch 'test2'
+Barretts-Air:2 bschoney$ ls
+Barretts-Air:2 bschoney$ 
+```
+F)
+```bash
+Barretts-Air:Homework bschoney$ mkdir 2
+Barretts-Air:Homework bschoney$ cd 2
+Barretts-Air:2 bschoney$ vim test.txt
+```
+G) 
+```bash
+Barretts-Air:2 bschoney$ git checkout test1
+error: The following untracked working tree files would be overwritten by checkout:
+	Homework/2/test.txt
+Please move or remove them before you switch branches.
+Aborting
+Barretts-Air:2 bschoney$ git add --all
+Barretts-Air:2 bschoney$ git commit -am "committing test.txt for test2"
+[test2 315a3ee] committing test.txt for test2
+ 1 file changed, 1 insertion(+)
+ create mode 100644 Homework/2/test.txt
+
+```
+H) Merging from master
+```bash
+Barretts-Air:ICP2017F bschoney$ git checkout master
+Switched to branch 'master'
+Your branch is up-to-date with 'origin/master'.
+Barretts-Air:ICP2017F bschoney$ git merge test1
+Updating 1ea78a3..f5be42f
+Fast-forward
+ Homework/2/test.txt | 1 +
+ 1 file changed, 1 insertion(+)
+ create mode 100644 Homework/2/test.txt
+```
+I) The homework/2/ folder is now in the master branch, and the test.txt file is in that homework/2/ folder.
+```bash
+Barretts-Air:ICP2017F bschoney$ cd Homework
+Barretts-Air:Homework bschoney$ ls
+1		2		test.txt
+Barretts-Air:Homework bschoney$ cd 2
+Barretts-Air:2 bschoney$ ls
+test.txt
+```
+J) The branches cannot be merged because they have conflicting files in them. The test.txt file in master is different from the test.txt file in test2 and both are in homework/2/; therefore, you have to make the files the same before merging.
+```bash
+Barretts-Air:ICP2017F bschoney$ git merge test2
+Auto-merging Homework/2/test.txt
+CONFLICT (add/add): Merge conflict in Homework/2/test.txt
+Automatic merge failed; fix conflicts and then commit the result.
+```
+K)
+```bash
+Barretts-Air:ICP2017F bschoney$ git checkout test2
+Homework/2/test.txt: needs merge
+error: you need to resolve your current index first
+```
+L) This conflict exists because branch test2 has a different test.txt file from the test.txt file in the master branch. 
+```bash
+Barretts-Air:ICP2017F bschoney$ git status
+On branch master
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+
+	both added:      Homework/2/test.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+```
+M)
+```bash
+Barretts-Air:ICP2017F bschoney$ cd Homework
+Barretts-Air:Homework bschoney$ cd 2
+Barretts-Air:2 bschoney$ vim test.txt
+```
+N)
+```bash
+Barretts-Air:2 bschoney$ git status
+On branch master
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+
+	both added:      test.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+Barretts-Air:2 bschoney$ git add --all
+Barretts-Air:2 bschoney$ git commit -am "committing resolved test.txt"
+[master b69ce7b] committing resolved test.txt
+Barretts-Air:2 bschoney$ git checkout test2
+Switched to branch 'test2'
+```
+O)
+```bash
+Barretts-Air:2 bschoney$ git branch -d test1
+error: The branch 'test1' is not fully merged.
+If you are sure you want to delete it, run 'git branch -D test1'.
+```
+P)
+```bash
+Barretts-Air:2 bschoney$ git checkout master
+Switched to branch 'master'
+Your branch is ahead of 'origin/master' by 3 commits.
+  (use "git push" to publish your local commits)
+Barretts-Air:2 bschoney$ git branch -d test1
+Deleted branch test1 (was f5be42f).
+Barretts-Air:2 bschoney$ git branch
+* master
+  test2
+```
+Q) The difference exists because the master branch and the test1 branch have been merged while the test1 branch and the test2 branch are operating independently and are unmerged. Since the test2 branch is separate from the test1 branch, git discourages deleting test1 from test2. However, the master branch and test1 are already merged, so git allows a simple deletion of branch test1 from the master branch.
+R)
+```bash
+Barretts-Air:2 bschoney$ git checkout test2
+Switched to branch 'test2'
+Barretts-Air:2 bschoney$ git branch -d test2
+error: Cannot delete branch 'test2' checked out at '/Users/bschoney/ICP2017F'
+```
+S)
+```bash
+Switched to branch 'master'
+Your branch is ahead of 'origin/master' by 3 commits.
+  (use "git push" to publish your local commits)
+Barretts-Air:2 bschoney$ git branch -d test2
+Deleted branch test2 (was 315a3ee).
+Barretts-Air:2 bschoney$ git branch
+* master
+```
+T)
+```bash
+Barretts-Air:2 bschoney$ git add --all
+Barretts-Air:2 bschoney$ git commit -am "committing all changes to master"
+On branch master
+Your branch is ahead of 'origin/master' by 3 commits.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+Barretts-Air:2 bschoney$ git push -u origin master
+Counting objects: 15, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (9/9), done.
+Writing objects: 100% (15/15), 1.15 KiB | 236.00 KiB/s, done.
+Total 15 (delta 3), reused 0 (delta 0)
+remote: Resolving deltas: 100% (3/3), completed with 1 local object.
+To github.com:bschoney/ICP2017F.git
+   1ea78a3..b69ce7b  master -> master
+Branch master set up to track remote branch master from origin.
+```
