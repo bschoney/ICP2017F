@@ -197,4 +197,6 @@ To github.com:bschoney/ICP2017F.git
    1ea78a3..b69ce7b  master -> master
 Branch master set up to track remote branch master from origin.
 ```
+<<<<<<< HEAD
 3) and 4) My gh-pages site is published at https://bschoney.github.io/ICP2017F/
+
