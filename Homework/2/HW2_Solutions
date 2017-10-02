@@ -1,0 +1,354 @@
+1)
+```bash
+format compact
+a = 1
+a =
+     1
+
+b = 'x'
+b =
+    'x'
+
+c = true
+c =
+  logical
+   1
+
+whos a b c
+Name      Size            Bytes  Class      Attributes
+
+  a         1x1                 8  double               
+  b         1x1                 2  char                 
+  c         1x1                 1  logical    
+
+a == c
+ans =
+  logical
+   1
+
+a + c
+ans =
+     2
+
+d = [1 2 3 4]
+d =
+     1     2     3     4
+
+e = ['a' 'b' 'c' 'd']
+e =
+    'abcd'
+
+f = ['abcd']
+f =
+    'abcd'
+
+g = {‘a’ ‘b‘ ‘c‘ ‘d‘}
+g =
+  1×4 cell array
+    'a'    'b'    'c'    'd'
+
+h = {a b c d}
+h =
+  1×4 cell array
+    [1]    'x'    [1]    [1×4 double]
+
+whos d e f g h
+  Name      Size            Bytes  Class     Attributes
+
+  d         1x4                32  double              
+  e         1x4                 8  char                
+  f         1x4                 8  char                
+  g         1x4               456  cell                
+  h         1x4               491  cell  
+```
+a = 1: This creates a variable, a, and initializes it as a 64-bit integer equal to 1
+b = ‘1’: This creates a variable, b, as a string equal to the letter ‘x’
+c = true: This creates a variable, c, as a logical test equal to true (or 1)
+whos a b c: lists the variables, the array size, how many bytes it contains, and the variable type
+a == c: compares variables a and c to test if they are the same; does a logical test to decide
+a + c: adds the value stored in variables a and c; a = 1 and c = true = 1, so a + c = 1 + 1 = 2
+d = [1 2 3 4]: creates a variable, d, and sets it equal to a 1x4 array of 64-bit integers
+e = [‘a’ ‘b’ ‘c’ ‘d’]: creates a variable, e, as a string with an a 1x4 array of characters
+f = [‘abcd’]: creates a variable, f, as a string with the same 1x4 array as variable e
+g = {‘a’ ‘b’ ‘c’ ‘d’}: creates variable, g, equal to one row of four cells filled with characters a,b,c,d
+h ={a b c d}: creates a variable, h, equal to one row of four cells filled with the variables a, b, c, d
+whos d e f g h: lists the variables, their array size, number of bytes, and the variable type
+
+2)
+```bash
+intmax int16
+ans =
+  int16
+   32767
+
+intmin int16
+ans =
+  int16
+   -32768
+
+intmax
+ans =
+  int32
+   2147483647
+
+intmin
+ans =
+  int32
+   -2147483648
+
+int16(1000000000000)
+ans =
+  int16
+   32767
+
+int32(-999999999999999999999)
+ans =
+  int32
+   -2147483648
+```
+If you try to enter a number larger than the maximum or smaller than the minimum, the number will be altered to the maximum or the minimum respectively. 
+
+3) 
+```bash
+1\2
+ans =
+     2
+
+1/2
+ans =
+    0.5000
+
+int8(1/2)
+ans =
+  int8
+   1
+
+int8(1/3)
+ans =
+  int8
+   0
+
+-5^2
+ans =
+   -25
+
+(-5) ^ 2
+ans =
+    25
+
+10-6/2
+ans =
+     7
+
+5*4/2*3
+ans =
+    30
+```
+1\2: Divides 2 by one; rarely used but enables operator overloading
+1/2: Divides 1 by 2, which is equal to 1/2
+int8(1/2): rounds the result of 1/2 up to the integer, 1
+int8(1/3): rounds the result of 1/3 down the nearest integer, 0
+-5 ^ 2: takes the negative value of the square of 5, -25
+(-5) ^ 2: squares the value -5 to get 25
+10-6/2: maintains order of operations by subtracting the result of 6/2 from 10
+5*4/2*3: uses order of operations from left to right; divides 5*4 by 2 then multiplies by 3
+
+4a)
+```bash
+a = [1 0; 2 1]
+a =
+     1     0
+     2     1
+
+b = [-1 2; 0 1]
+b =
+    -1     2
+     0     1
+
+c = [3; 2]
+c =
+     3
+     2
+
+d = 5
+d =
+     5
+```
+4b)
+```bash
+a + b
+ans =
+     0     2
+     2     2
+
+a .* b
+ans =
+    -1     0
+     0     1
+
+a * b
+ans =
+    -1     2
+    -2     5
+
+a * c
+ans =
+     3
+     8
+
+a + c
+ans =
+     4     3
+     4     3
+
+a + d
+ans =
+     6     5
+     7     6
+
+a .* d
+ans =
+     5     0
+    10     5
+
+a * d
+ans =
+     5     0
+    10     5
+```
+a + b: MATLAB is adding the values in the array, a, with the relative values in the array, b
+a .* b: MATLAB is multiplying the values in the same relative position of each array
+a * b: multiplies the first row of matrix a with the first column of matrix b then adds these
+values and places the result in the first row of the first column; then it multiplies the second row of a with the first column of b, adds the values, and places the result in the second row of
+the first column; this is repeated for the second column of b
+a * c: multiplies the first row of matrix a with the column of matrix c then adds each and places
+the result in the first row; then it multiplies the second row of matrix a with the column c and
+places the result in the second row
+a + c: MATLAB adds the column in c with both columns in a
+a + d: MATLAB adds the one value in d (5) to every value stored in a
+a .* d: since there is only one value in d (5),  each of the values in a is multiplied by the scalar, 5
+a * d: MATLAB treats d as a scalar and multiplies all values of a by 5
+
+5)
+```bash
+v = [2 2 2]
+a = diag(v)
+v =
+     2     2     2
+a =
+     2     0     0
+     0     2     0
+     0     0     2
+
+a = 2 * eye(3)
+a =
+     2     0     0
+     0     2     0
+     0     0     2
+
+w = [2 0 0; 0 2 0; 0 0 2]
+a = zeros(3) + w
+w =
+     2     0     0
+     0     2     0
+     0     0     2
+a =
+     2     0     0
+     0     2     0
+     0     0     2
+```
+
+6)
+```bash
+% You cannot start a variable with an integer; I deleted the 1
+a = 2;
+% You must have apostrophes around characters
+a1 = 'b';
+% No error for x = 2
+x = 2;
+% MATLAB is case sensitive, so I changed the X to x
+y = x + 4;
+% The semicolon ends the line and disrupts the calculation
+pi = 4 * atan(1);
+% No error displaying pi at this point
+disp(pi)
+%{ 
+Quotation mark and apostrophe did not match; also, number cannot be 
+stored as a string if used for calculations 
+%}
+pi = 3.14159;
+% Changed pi from a string to a double to allow calculation
+disp(tan(pi));
+%{
+No error unless looking for a specific order in which exponents are
+performed
+%}
+c = 4^3^2^3;
+% One more closed parenthesis than open parenthesis; added open parenthesis
+d = ((c-78564)/(c + 32));
+% No error here
+year = 2017;
+% The number saved in year must be converted to a string for display
+disp(['The year is ' num2str(year)]);
+% No error here
+stuff = {'a' 'b' 4 21 'c'};
+% MATLAB starts counting from 1, so cell 0 does not exist
+beginning = stuff(1);
+% Cannot use 'end' as a variable because it has a built-in function
+finish = stuff(5);
+% The percentage sign creates comments and is not a mathematical function
+discount = 12/100;
+% The symbols at the end made the operation incomplete
+AMOUNT = 120;
+% amount is a double, so characters cannot be stored in this variable
+amount = 120;
+% Characters must be surrounded by apostrophes
+and = 'duck';
+% The apostrophe and quotation mark did not match
+class = 'INF1100, gr 2';
+% No error here; does a logical test to continue if true (x > 0 = true)
+continue_ = x > 0;
+% fox is not defined as a variable yet, so it cannot be compared
+fox = false;
+%{ 
+No error here; sets wolf equal to fox then compares both variables to the
+value true, which outputs a 0 because the variables are not equal to true
+%}
+wolf = fox == true;
+% Syntax error with the semicolon
+Persian = ['Persian is a human language'];
+% Colon needs to be removed
+Spanish = {'Spanish ' 'is ' 'another '  'language'};
+% Must use the characters 'Persian' and 'Spanish
+disp(['Persian is not the same as Spanish']);
+```
+>> Persian
+Persian =
+  cell
+    'Persian is a human language'
+>> Spanish
+Spanish =
+  1×4 cell array
+    'Spanish '    'is '    ' another '    'language'
+>> disp(['Persian is not the same as Spanish'])
+Persian is not the same as Spanish
+
+The variable, Persian, is saved as one array of characters, so the text appears as a sentence.The variable, Spanish, is saved separately in cells, so each groupof character shows separately.To display the last sentence, Persian and Spanish have to be included as characters instead of variables because they will call in the characters stored in them if used as variables.
+
+7)
+```bash
+mkdir mynewdir
+cd mynewdir
+
+run myscript.m
+```
+The code in myscript.m produces a plot of of the absolute value of the function sin(x) from -2pi to 2pi
+
+8)
+```bash
+run myscript.m
+Error using run (line 61)
+myscript.m not found.
+```
+When you try to run the code from a different directory, you get an error that says the file cannot be found because MATLAB searches for the document you’re trying to run only within the directory from which you enter the command.
+
