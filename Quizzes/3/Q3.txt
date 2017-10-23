@@ -1,0 +1,75 @@
+1)
+* does matrix multiplication where the row of one matrix is multiplied with the column with of the other matrix
+.* does element-wise multiplication where each value is multiplied with the value in the same relative position
+Example:
+>> x = [5 8; 9 0];
+y = [6 1; 1 3];
+a = x * y
+b = x .* y
+a =
+    38    29
+    54     9
+b =
+    30     8
+     9     0
+
+2)
+>> A = [1 0 3];
+B = [2 3 7];
+C = sum(A .* B)
+C =
+    23
+
+3)
+function y = testString(n)
+n = input('Please enter the word MATLAB', 's')
+if 'MATLAB' == testString(n)
+    y = true
+else
+    y = false
+end
+
+4)
+The operator || improves code efficiency. This is called short-circuiting, which means that MATLAB stops checking the if conditions if the first condition is true. The second condition is only checked if the first condition is not met.
+
+5)
+>> a = true
+b = false
+if b == 0
+    x = 0>10.0
+else
+    x = (a/b)>10.0
+end
+
+a =
+  logical
+   1
+b =
+  logical
+   0
+x =
+  logical
+   0
+
+6)
+Using a cell array in the structure would be much more efficient. If you’re trying to calculate the mean of the grades, you could just use the built-in function sum() to get the total of grades then divide by the number of students.
+Also, using cell arrays allows you to use loops to fill the array.
+
+7)
+function y = getRoot(a,b,c)
+a = input('Enter the coeffecient of x^2')
+b = input('Enter the coefficient of x')
+c = input('Enter the constant')
+ 
+n = (-b - sqrt(b.^2 - 4.*a.*c))/(2.*a)
+p = (-b + sqrt(b.^2 - 4.*a.*c))/(2.*a)
+
+
+8)
+f(a,b,c) = @(a,b,c) (integral(@(x) (x.^2 + c.*x + 1),a,b)
+
+9)
+function y = getFac(n)
+if getFac(n) > 0
+    y = getFac(n) .* getFac(n-1) .* getFac(n-2) .* getFac(n-3) .* 1
+end
