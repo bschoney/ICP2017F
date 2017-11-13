@@ -1,0 +1,109 @@
+1)
+
+A)
+
+function fact = getFacWhile(n)
+ 
+fact = 1;
+counter = n;
+while counter > 0
+    fact = fact .* counter;
+    counter = counter - 1;
+end
+disp(num2str(fact))
+end
+
+
+>> getFacWhile(5)
+120
+
+ans =
+
+   120
+
+B)
+function fact = getFacFor(n)
+ 
+fact = 1;
+for i = n:-1:1
+    fact = fact .* i;
+end
+disp(num2str(fact))
+ 
+end
+
+>> getFacFor(5)
+120
+
+C)
+function fact = getFacVec(n)
+ 
+vec = 1:n;
+ 
+fact = prod(vec);
+ 
+disp(num2str(fact));
+
+>> getFacVec(5)
+120
+
+ans =
+
+   120
+
+2)
+function time = getTimeFor(n)
+time = timeit(@()getFacFor(n));
+disp(num2str(time));
+end
+ 
+function fact = getFacFor(n)
+ 
+fact = 1;
+for i = n:-1:1
+    fact = fact .* i;
+end
+ 
+end
+
+function time = getTimeVec(n)
+time = timeit(@()getFacVec(n));
+disp(num2str(time));
+end
+ 
+function fact = getFacVec(n)
+ 
+vec = 1:n;
+ 
+fact = prod(vec);
+end
+
+function time = getTimeWhile(n)
+time = timeit(@()getFacWhile(n));
+disp(num2str(time));
+end
+ 
+function fact = getFacWhile(n)
+ 
+fact = 1;
+counter = n;
+while counter > 0
+    fact = fact .* counter;
+    counter = counter - 1;
+end
+
+
+>> timeFacFuncs
+Enter the factorial you would like to calculate: 1700000
+Average runtime for getFacWhile(1700000):  
+0.0056801
+Average runtime for getFacFor(1700000):  
+0.0061703
+Average runtime for getFacVec(1700000):  
+0.0065743
+3)
+function fact = extraCred(n)
+ 
+vec = 1:n;
+ 
+
