@@ -142,7 +142,7 @@ for irow = nrow:-1:1
         end
         % Titling each sublot with its slice number and setting the color map
         title(['z = ' num2str(sliceNumber)]);
-        caxis([0 10^4]);
+        caxis([0 1]);
         hold on;
         
         % 2)
