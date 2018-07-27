@@ -2,7 +2,7 @@
 **Barrett Schonefeld** <br />
 **UT EID:** bjs3865 <br />
 **Email:** bschoney@utexas.edu <br />
-**Department:** [The Department of Aerospace Engineering](http://www.ae.utexas.edu/) <br />
+**Department:** [The Department of Computer Science](http://www.ae.utexas.edu/) <br />
 **University:** [The Univeristy of Texas at Austin](https://www.utexas.edu/) <br />
 **Level:** Sophomore <br />
 **ICP Class Position:** Student <br />
